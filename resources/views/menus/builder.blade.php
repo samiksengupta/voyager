@@ -171,6 +171,7 @@
                 $m_route_type  = $('#m_route_type'),
                 $m_route       = $('#m_route'),
                 $m_parameters  = $('#m_parameters'),
+                $m_permission  = $('#m_permission'),
                 $m_icon_class  = $('#m_icon_class'),
                 $m_color       = $('#m_color'),
                 $m_target      = $('#m_target'),
@@ -224,6 +225,7 @@
                     $m_url.val(_src.data('url'));
                     $m_route.val(_src.data('route'));
                     $m_parameters.val(JSON.stringify(_src.data('parameters')));
+                    $m_permission.val(_src.data('permission'));
                     $m_icon_class.val(_src.data('icon_class'));
                     $m_color.val(_src.data('color'));
                     $m_id.val(id);
