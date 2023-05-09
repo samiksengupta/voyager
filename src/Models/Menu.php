@@ -146,7 +146,7 @@ class Menu extends Model
 
         // Filter items by permission
         $items = $items->filter(function ($item) {
-            return !$item->children->isEmpty() || Auth::user()->can('browse', $item);
+            return !$item->children->isEmpty() || Auth::user()->can('browse', $item) || Auth::user()->hasPermission($item->permission);
         })->filter(function ($item) {
             // Filter out empty menu-items
             if ($item->url == '' && $item->route == '' && $item->children->count() == 0) {
