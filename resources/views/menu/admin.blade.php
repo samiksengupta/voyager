@@ -12,6 +12,7 @@
                 data-title="{{ $item->title }}"
                 data-url="{{ $item->url }}"
                 data-target="{{ $item->target }}"
+                data-permission="{{ $item->permission }}"
                 data-icon_class="{{ $item->icon_class }}"
                 data-color="{{ $item->color }}"
                 data-route="{{ $item->route }}"
