@@ -148,6 +148,9 @@ class Menu extends Model
         $items = $items->filter(function ($item) {
             return !$item->children->isEmpty() || Auth::user()->can('browse', $item) || Auth::user()->hasPermission($item->permission);
         })->filter(function ($item) {
+            if($item->permission) return Auth::user()->hasPermission($item->permission);
+            else return true;
+        })->filter(function ($item) {
             // Filter out empty menu-items
             if ($item->url == '' && $item->route == '' && $item->children->count() == 0) {
                 return false;
